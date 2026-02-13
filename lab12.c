@@ -18,36 +18,25 @@ int main ()
     ch += (c % 2) == 0 ? 1 : 0; 
     printf("Количество четных чисел:%d", ch);
 
-    double max1,min1, sr;
-    max1 == a > b ? a : b;
-    max1 == b > c ? b : c; 
-    min1== a > b ? a : b;
-    min1 == b > c ? b : c;
-    sr = (a < max1 && a > min1) ? a : (b < max1 && b > min1) ? b : c;
+    max1 = a > b ? a : b;
+    max1 = max1 > c ? max1 : c;
+    min1 = a < b ? a : b;
+    min1 = min1 < c ? min1 : c;
+    sr = ((max1 ==  a && min1 == b) || (max1 == b && min1 == a)) ? c :
+    ((max1==c && min1 == b)||(min1 == c && max1 == b)) ? a : b;
+
+    
     printf("Среднее из этих чисел:%f",sr);
 
-    int nc, nb;
-    int ABC[3] = {a, b, c};
-    int min = ABC[0];
-    for(int i = 0; i < 5; ++i)
-{
-    if(ABC[3] < min)
-    {
-        min = ABC[i];
-    }
-} 
-nb = min + 1;
-printf("Наименьший элемент в массиве: %d", nb);
-    //double i;
-    //i = 0;
-    //nb = 0;
-    //nc = 0;
-    //for (i = 0; i < nc; i++);
-      //  if (ABC[3] < nc)
-        //nb = i + 1;
-        //printf("Наименьший элемент в массиве: %d", nb);
-    //return 0;
+     int nc;
+    min1 = a < b ? a : b;
+    min1 = min1 < c ? min1 : c;
+    nc = min1 == a ? 1 : 
+    min1 == b ? 2 : 3;
+    printf("%d", nc);
+printf("Наименьший элемент в массиве: %d", nc);
+    return 0;
 
-
+}
 
 }
